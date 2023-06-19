@@ -1,5 +1,6 @@
 import ShoppingCard from "assets/icons/shopping-cart.png";
 import { useOpenCardResume } from "stores/useOpenCardResume";
+import "./styles.css";
 
 const Header = () => {
   const openCardResume = useOpenCardResume((state) => state.openCardResume);
@@ -9,7 +10,7 @@ const Header = () => {
 
   return (
     <header>
-      <h2>PokeMeep</h2>
+      <h1>PokeMeep</h1>
       <div
         className="shopping-card"
         onClick={() => setOpenCardResume(!openCardResume)}

@@ -1,12 +1,12 @@
-import TestImage from "assets/product-card-test/coffee.jpeg";
 import "./styles.css";
+import { ProductCardProps } from "./types";
 
-const ProductCard = () => {
+const ProductCard = ({ image, name, price }: ProductCardProps) => {
   return (
     <div className="product-card">
-      <img src={TestImage} alt="test" width="200px" />
-      <h3>Nome</h3>
-      <p>Preço</p>
+      <img src={image} alt="test" width="200px" />
+      <h3>{name}</h3>
+      <p>{price}</p>
     </div>
   );
 };
