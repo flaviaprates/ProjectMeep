@@ -1,9 +1,7 @@
+import CheckoutContent from "components/CheckoutContent";
+
 const Checkout = () => {
-  return (
-    <div className="App">
-      <p>Checkout</p>
-    </div>
-  );
+  return <CheckoutContent />;
 };
 
 export default Checkout;

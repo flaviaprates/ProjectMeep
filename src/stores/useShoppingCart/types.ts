@@ -1,6 +1,8 @@
 import { Item } from "components/Main/types";
 
+export type ShoppingCart = Item[];
+
 export type State = {
-  shoppingCart: Item[];
-  setShoppingCart: (payload: Item[]) => void;
+  shoppingCart: ShoppingCart;
+  setShoppingCart: (payload: ShoppingCart) => void;
 };

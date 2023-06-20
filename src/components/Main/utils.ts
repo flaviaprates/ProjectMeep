@@ -38,11 +38,12 @@ export const getProductImage = (name: string) => {
 export const handleData = (data: ResponseData) => {
   return data.map((it, index) => ({
     ...it,
-    price: 18,
+    unitPrice: 18,
     description: "Descrição",
     image: getProductImage(it.name),
     obs: "",
     numberItens: 0,
+    totalPrice: 0,
     index,
   }));
 };

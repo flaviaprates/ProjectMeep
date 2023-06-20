@@ -38,3 +38,7 @@
 .product-data img.add-cart {
     cursor: pointer;
 }
+
+.product-data img.add-cart:hover {
+    opacity: 0.7;
+}

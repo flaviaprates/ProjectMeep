@@ -13,8 +13,42 @@
 }
 
 .modal-content {
-    width: 200px;
+    min-width: 250px;
     height: calc(100% - 80px);
     background-color: white;
     z-index: 2;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    grid-gap: 14px;
+}
+
+.cart-product-resume {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.modal-content button {
+    all: unset;
+
+    background-color: #1c8ce1;
+    color: white;
+    border-radius: 10px;
+    cursor: pointer;
+    text-align: center;
+    padding: 5px;
+    margin-top: 40px;
+}
+
+.modal-content button:hover {
+    opacity: 0.7;
+}
+
+.modal-content button:disabled,
+.modal-content button[disabled]{
+  border: 1px solid #999999;
+  background-color: #cccccc;
+  color: #666666;
+  cursor: default;
 }

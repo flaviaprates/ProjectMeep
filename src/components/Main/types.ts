@@ -1,5 +1,6 @@
 export type Item = {
-  price: number;
+  totalPrice: number;
+  unitPrice: number;
   description: string;
   image: string;
   obs: string;

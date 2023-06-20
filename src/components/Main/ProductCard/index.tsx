@@ -5,13 +5,7 @@ import { useShoppingCart } from "stores/useShoppingCart";
 import "./styles.css";
 import { ProductCardProps } from "./types";
 
-const ProductCard = ({
-  item,
-  image,
-  name,
-  price,
-  description,
-}: ProductCardProps) => {
+const ProductCard = ({ item, description }: ProductCardProps) => {
   const shoppingCart = useShoppingCart((state) => state.shoppingCart);
   const setShoppingCart = useShoppingCart((state) => state.setShoppingCart);
 
@@ -34,7 +28,7 @@ const ProductCard = ({
         ...item,
         obs: obs,
         numberItens: numberOfProducts,
-        price: item.price * numberOfProducts,
+        totalPrice: item.unitPrice * numberOfProducts,
       },
     ]);
   };
@@ -42,13 +36,13 @@ const ProductCard = ({
   return (
     <div className="product-card">
       <div className="product-image">
-        <img src={image} alt="Produto" />
+        <img src={item.image} alt="Produto" />
       </div>
       <div className="product-data">
-        <h3>{name}</h3>
+        <h3>{item.name}</h3>
         <div className="product-price">
           <img src={PriceIcon} width="20px" />
-          <p>{price}</p>
+          <p>R$ {item.unitPrice.toFixed(2).replace(".", ",")}</p>
         </div>
 
         {description && (

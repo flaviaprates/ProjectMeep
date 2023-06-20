@@ -3,7 +3,7 @@ import { Item } from "components/Main/types";
 export const handleShoppingCart = (data: Item[]) => {
   const sum = data
     .reduce(function calculo(accumulator, totalValue) {
-      return accumulator + totalValue.price;
+      return accumulator + totalValue.totalPrice;
     }, 0)
     .toFixed(2)
     .replace(".", ",");

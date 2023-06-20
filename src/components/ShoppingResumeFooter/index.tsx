@@ -1,16 +1,22 @@
+import { useCartStatus } from "hooks/useCartStatus";
 import { useMemo } from "react";
 import { useOpenCardResume } from "stores/useOpenCardResume";
 import { useShoppingCart } from "stores/useShoppingCart";
-import { handleShoppingCart } from "utils/index";
 import "./styles.css";
+import { handleCountTotalItem } from "./utils";
 
 const ShoppingResumeFooter = () => {
   const openCardResume = useOpenCardResume((state) => state.openCardResume);
   const shoppingCart = useShoppingCart((state) => state.shoppingCart);
 
-  const totalProductsInCart = useMemo(
-    () => (shoppingCart.length > 0 ? handleShoppingCart(shoppingCart) : null),
-    [shoppingCart]
+  const { totalProductsInCart } = useCartStatus();
+
+  const totalItems = useMemo(
+    () =>
+      totalProductsInCart?.items
+        ? handleCountTotalItem(totalProductsInCart.items)
+        : 0,
+    [totalProductsInCart]
   );
 
   return (
@@ -21,8 +27,7 @@ const ShoppingResumeFooter = () => {
             {totalProductsInCart && (
               <>
                 <p>
-                  {totalProductsInCart?.items.length}{" "}
-                  {totalProductsInCart?.items.length > 1 ? `itens` : `item`}
+                  {totalItems} {totalItems > 1 ? `itens` : `item`}
                 </p>
                 <p>Total: R$ {totalProductsInCart?.sum}</p>
               </>

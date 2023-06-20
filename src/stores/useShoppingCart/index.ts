@@ -1,10 +1,10 @@
 import create, { SetState } from "zustand";
 
-import { Item } from "components/Main/types";
-import { State } from "./types";
+import { persist } from "zustand/middleware";
+import { ShoppingCart, State } from "./types";
 
-export const useShoppingCart = create<State>((set: SetState<State>) => {
-  function setShoppingCart(shoppingCart: Item[]): void {
+export const store = (set: SetState<State>): State => {
+  function setShoppingCart(shoppingCart: ShoppingCart): void {
     set({ shoppingCart });
   }
 
@@ -12,4 +12,11 @@ export const useShoppingCart = create<State>((set: SetState<State>) => {
     shoppingCart: [],
     setShoppingCart,
   };
-});
+};
+
+export const useShoppingCart = create<State>(
+  persist(store, {
+    name: "cart-store",
+    getStorage: () => localStorage,
+  })
+);

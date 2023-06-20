@@ -21,9 +21,6 @@ const ProductDetailsContent = () => {
             {selectProduct && (
               <ProductCard
                 item={selectProduct}
-                image={selectProduct.image}
-                name={selectProduct.name}
-                price={selectProduct.price}
                 description={selectProduct.description}
               />
             )}
