@@ -15,4 +15,5 @@ header .shopping-card {
 
 header h1 {
     color: rgb(22, 22, 75);
+    cursor: pointer;
 }
