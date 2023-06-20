@@ -23,4 +23,5 @@
     justify-content: space-around;
     flex-wrap: wrap;
     grid-gap: 80px;
+    position: relative;
 }

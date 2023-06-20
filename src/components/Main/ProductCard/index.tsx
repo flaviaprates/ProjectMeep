@@ -1,5 +1,5 @@
 import AddToCart from "assets/icons/add-shopping-cart.png";
-import PriceIcon from "assets/icons/credit-card.png";
+import PriceIcon from "assets/icons/tag.png";
 import { useState } from "react";
 import { useShoppingCart } from "stores/useShoppingCart";
 import "./styles.css";

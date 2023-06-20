@@ -1,9 +1,7 @@
+import ConfirmContent from "components/ConfirmContent";
+
 const Confirm = () => {
-  return (
-    <div className="App">
-      <p>Confirm</p>
-    </div>
-  );
+  return <ConfirmContent />;
 };
 
 export default Confirm;
